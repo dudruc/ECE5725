@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#Jingyi Wang(jw2527) Zitao Zheng(zz632) Lab 1 2018-09-12
+#for launching multiple processes
+echo "Running: video_control.py &"
+python video_control.py&
+
+#pay attention to the correctness of the directory of the fifo file
+sudo SDL_VIDEODRIVER=fbcon SDL_FBDEV=/dev/fb1 mplayer -input file=/home/pi/lab1/video_fifo -vo sdl -framedrop /home/pi/bigbuckbunny320p.mp4
