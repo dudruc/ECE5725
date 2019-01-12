@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#run more_video_control.py in the background and then run mplayer
+echo "Running: more_video_control.py &"
+python more_video_control.py&
+
+sudo SDL_VIDEODRIVER=fbcon SDL_FBDEV=/dev/fb1 mplayer -input file=/home/pi/lab1/video_fifo -vo sdl -framedrop /home/pi/bigbuckbunny320p.mp4
